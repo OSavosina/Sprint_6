@@ -11,7 +11,7 @@ class TestAccordionPanelOpenSuccess:
     def test_accordion_panel_open_success(self, driver, item):
         accordion_questions = MainPage(driver)
         expected_value = AccordionConstants.ACCORDION_PANELS_TEXTS[item]
-        actually_value = accordion_questions.check_accordion_panel_is_enabled(item, AccordionConstants.ACCORDION_PANELS_TEXTS[item])
+        actually_value = accordion_questions.check_accordion_panel_is_enabled(item)
         assert actually_value == expected_value, f'Ожидалось значение: "{expected_value}", получено "{actually_value}"'
 
 
