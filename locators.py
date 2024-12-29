@@ -2,6 +2,10 @@ from selenium.webdriver.common.by import By
 
 
 class Locators:
+    # accordion
+    locator_accordion_heading = "//div[@id='{:s}']/parent::*"
+    locator_accordion_panel = "//div[@id='{:s}']/p"
+    
     # form user
     locator_input_first_name_form_order = (By.XPATH, '//input[@placeholder="* Имя"]')
     locator_input_second_name_form_order = (By.XPATH, '//input[@placeholder="* Фамилия"]')
