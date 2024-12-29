@@ -19,10 +19,10 @@ class MainPage(BasePage):
     @allure.step('Фабрика локаторов для аккордиона')
     def factory_locators_accordion(self):
         for item_id in range(AccordionConstants.ACCORDION_HEADING_COUNT):
-            heading = (By.XPATH, f"//div[@id='{AccordionConstants.ACCORDION_HEADING_LOCATOR}-{item_id}']/parent::*")
+            heading = (By.XPATH, Locators.locator_accordion_heading.format(f'{AccordionConstants.ACCORDION_HEADING_LOCATOR}-{item_id}'))
             self.locators_dict_accordion_heading[f"ACCORDION_HEADING_{item_id}"] = heading
 
-            panel = (By.XPATH, f"//div[@id='{AccordionConstants.ACCORDION_PANELS_LOCATOR}-{item_id}']/p")
+            panel = (By.XPATH, Locators.locator_accordion_panel.format(f'{AccordionConstants.ACCORDION_PANELS_LOCATOR}-{item_id}'))
             self.locators_dict_accordion_panels[f"ACCORDION_PANEL_{item_id}"] = panel
 
     @allure.step('Открытие ответа на вопрос из списка')
